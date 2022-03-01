@@ -1,0 +1,1923 @@
+[functions]
+
+  [functions._ipx]
+  node_bundler = "nft"
+
+  [functions.___netlify-handler]
+  included_files = [
+    ".env",
+    ".env.local",
+    ".env.production",
+    ".env.production.local",
+    ".next/server/**",
+    ".next/serverless/**",
+    ".next/*.json",
+    ".next/BUILD_ID",
+    ".next/static/chunks/webpack-middleware*.js",
+    "!.next/server/**/*.js.nft.json",
+    "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+    "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+    "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+    "!node_modules/next/dist/compiled/webpack/bundle4.js",
+    "!node_modules/next/dist/compiled/webpack/bundle5.js",
+    "!node_modules/next/dist/compiled/terser/bundle.min.js",
+    "!node_modules/sharp/**/*"
+  ]
+  external_node_modules = []
+  node_bundler = "nft"
+
+  [functions.___netlify-odb-handler]
+  included_files = [
+    ".env",
+    ".env.local",
+    ".env.production",
+    ".env.production.local",
+    ".next/server/**",
+    ".next/serverless/**",
+    ".next/*.json",
+    ".next/BUILD_ID",
+    ".next/static/chunks/webpack-middleware*.js",
+    "!.next/server/**/*.js.nft.json",
+    "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+    "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+    "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+    "!node_modules/next/dist/compiled/webpack/bundle4.js",
+    "!node_modules/next/dist/compiled/webpack/bundle5.js",
+    "!node_modules/next/dist/compiled/terser/bundle.min.js",
+    "!node_modules/sharp/**/*"
+  ]
+  external_node_modules = []
+  node_bundler = "nft"
+
+[build]
+publish = ".next"
+
+  [build.environment]
+  NEXT_PRIVATE_TARGET = "server"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+from = "/_next/static/*"
+to = "/static/:splat"
+status = 200
+
+[[redirects]]
+from = "/_next/image*"
+to = "/_ipx/w_:width,q_:quality/:url"
+status = 301
+
+  [redirects.query]
+  url = ":url"
+  w = ":width"
+  q = ":quality"
+
+[[redirects]]
+from = "/_ipx/*"
+to = "/.netlify/builders/_ipx"
+status = 200
+
+[[redirects]]
+from = "/cache/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/server/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/serverless/*"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/traces"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/routes-manifest.json"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/build-manifest.json"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/prerender-manifest.json"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/react-loadable-manifest.json"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/BUILD_ID"
+to = "/404.html"
+status = 404
+force = true
+
+[[redirects]]
+from = "/api"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/feed.xml"
+to = "/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/android-chrome-96x96.png"
+to = "/static/favicons/android-chrome-96x96.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/apple-touch-icon.png"
+to = "/static/favicons/apple-touch-icon.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/browserconfig.xml"
+to = "/static/favicons/browserconfig.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/favicon-16x16.png"
+to = "/static/favicons/favicon-16x16.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/favicon-32x32.png"
+to = "/static/favicons/favicon-32x32.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/favicon.ico"
+to = "/static/favicons/favicon.ico"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/mstile-150x150.png"
+to = "/static/favicons/mstile-150x150.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/safari-pinned-tab.svg"
+to = "/static/favicons/safari-pinned-tab.svg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/favicons/site.webmanifest"
+to = "/static/favicons/site.webmanifest"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/avatar.png"
+to = "/static/images/avatar.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/google.png"
+to = "/static/images/google.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/logo.png"
+to = "/static/images/logo.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/ocean.jpeg"
+to = "/static/images/ocean.jpeg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/sparrowhawk-avatar.jpg"
+to = "/static/images/sparrowhawk-avatar.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/time-machine.jpg"
+to = "/static/images/time-machine.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/twitter-card.png"
+to = "/static/images/twitter-card.png"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/book/feed.xml"
+to = "/tags/book/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/canada/feed.xml"
+to = "/tags/canada/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/code/feed.xml"
+to = "/tags/code/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/features/feed.xml"
+to = "/tags/features/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/feature/feed.xml"
+to = "/tags/feature/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/guide/feed.xml"
+to = "/tags/guide/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/github/feed.xml"
+to = "/tags/github/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/holiday/feed.xml"
+to = "/tags/holiday/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/markdown/feed.xml"
+to = "/tags/markdown/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/images/feed.xml"
+to = "/tags/images/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/math/feed.xml"
+to = "/tags/math/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/next-js/feed.xml"
+to = "/tags/next-js/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/multi-author/feed.xml"
+to = "/tags/multi-author/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/ols/feed.xml"
+to = "/tags/ols/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/reflection/feed.xml"
+to = "/tags/reflection/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/tailwind/feed.xml"
+to = "/tags/tailwind/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/tags/writings/feed.xml"
+to = "/tags/writings/feed.xml"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/canada/lake.jpg"
+to = "/static/images/canada/lake.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/canada/maple.jpg"
+to = "/static/images/canada/maple.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/canada/mountains.jpg"
+to = "/static/images/canada/mountains.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/static/images/canada/toronto.jpg"
+to = "/static/images/canada/toronto.jpg"
+status = 200
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+force = true
+
+  [redirects.conditions]
+  Cookie = [
+    "__prerender_bypass",
+    "__next_preview_data"
+  ]
+
+[[redirects]]
+from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/404.json"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/404"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/projects.json"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/projects"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[[redirects]]
+from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/page/:page.json"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/blog/page/:page"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/:slug/*"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/blog/:slug/*"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/tags/:tag.json"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/tags/:tag"
+to = "/.netlify/builders/___netlify-odb-handler"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/___netlify-handler"
+status = 200
+
+[context]
+
+  [context.production]
+
+    [context.production.environment]
+    NEXT_PRIVATE_TARGET = "server"
+
+    [context.production.functions]
+
+      [context.production.functions._ipx]
+      node_bundler = "nft"
+
+      [context.production.functions.___netlify-handler]
+      included_files = [
+        ".env",
+        ".env.local",
+        ".env.production",
+        ".env.production.local",
+        ".next/server/**",
+        ".next/serverless/**",
+        ".next/*.json",
+        ".next/BUILD_ID",
+        ".next/static/chunks/webpack-middleware*.js",
+        "!.next/server/**/*.js.nft.json",
+        "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+        "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/compiled/webpack/bundle4.js",
+        "!node_modules/next/dist/compiled/webpack/bundle5.js",
+        "!node_modules/next/dist/compiled/terser/bundle.min.js",
+        "!node_modules/sharp/**/*"
+      ]
+      external_node_modules = []
+      node_bundler = "nft"
+
+      [context.production.functions.___netlify-odb-handler]
+      included_files = [
+        ".env",
+        ".env.local",
+        ".env.production",
+        ".env.production.local",
+        ".next/server/**",
+        ".next/serverless/**",
+        ".next/*.json",
+        ".next/BUILD_ID",
+        ".next/static/chunks/webpack-middleware*.js",
+        "!.next/server/**/*.js.nft.json",
+        "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+        "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/compiled/webpack/bundle4.js",
+        "!node_modules/next/dist/compiled/webpack/bundle5.js",
+        "!node_modules/next/dist/compiled/terser/bundle.min.js",
+        "!node_modules/sharp/**/*"
+      ]
+      external_node_modules = []
+      node_bundler = "nft"
+
+    [context.production.build]
+
+      [context.production.build.environment]
+      NEXT_PRIVATE_TARGET = "server"
+
+    [[context.production.redirects]]
+    from = "/_next/static/*"
+    to = "/static/:splat"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/_next/image*"
+    to = "/_ipx/w_:width,q_:quality/:url"
+    status = 301
+
+      [context.production.redirects.query]
+      url = ":url"
+      w = ":width"
+      q = ":quality"
+
+    [[context.production.redirects]]
+    from = "/_ipx/*"
+    to = "/.netlify/builders/_ipx"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/cache/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/server/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/serverless/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/traces"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/routes-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/build-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/prerender-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/react-loadable-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/BUILD_ID"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.production.redirects]]
+    from = "/api"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/feed.xml"
+    to = "/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/sitemap.xml"
+    to = "/sitemap.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/android-chrome-96x96.png"
+    to = "/static/favicons/android-chrome-96x96.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/apple-touch-icon.png"
+    to = "/static/favicons/apple-touch-icon.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/browserconfig.xml"
+    to = "/static/favicons/browserconfig.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/favicon-16x16.png"
+    to = "/static/favicons/favicon-16x16.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/favicon-32x32.png"
+    to = "/static/favicons/favicon-32x32.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/favicon.ico"
+    to = "/static/favicons/favicon.ico"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/mstile-150x150.png"
+    to = "/static/favicons/mstile-150x150.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/safari-pinned-tab.svg"
+    to = "/static/favicons/safari-pinned-tab.svg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/favicons/site.webmanifest"
+    to = "/static/favicons/site.webmanifest"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/avatar.png"
+    to = "/static/images/avatar.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/google.png"
+    to = "/static/images/google.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/logo.png"
+    to = "/static/images/logo.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/ocean.jpeg"
+    to = "/static/images/ocean.jpeg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/sparrowhawk-avatar.jpg"
+    to = "/static/images/sparrowhawk-avatar.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/time-machine.jpg"
+    to = "/static/images/time-machine.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/twitter-card.png"
+    to = "/static/images/twitter-card.png"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/book/feed.xml"
+    to = "/tags/book/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/canada/feed.xml"
+    to = "/tags/canada/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/code/feed.xml"
+    to = "/tags/code/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/features/feed.xml"
+    to = "/tags/features/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/feature/feed.xml"
+    to = "/tags/feature/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/guide/feed.xml"
+    to = "/tags/guide/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/github/feed.xml"
+    to = "/tags/github/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/holiday/feed.xml"
+    to = "/tags/holiday/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/markdown/feed.xml"
+    to = "/tags/markdown/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/images/feed.xml"
+    to = "/tags/images/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/math/feed.xml"
+    to = "/tags/math/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/next-js/feed.xml"
+    to = "/tags/next-js/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/multi-author/feed.xml"
+    to = "/tags/multi-author/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/ols/feed.xml"
+    to = "/tags/ols/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/reflection/feed.xml"
+    to = "/tags/reflection/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/tailwind/feed.xml"
+    to = "/tags/tailwind/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/tags/writings/feed.xml"
+    to = "/tags/writings/feed.xml"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/canada/lake.jpg"
+    to = "/static/images/canada/lake.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/canada/maple.jpg"
+    to = "/static/images/canada/maple.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/canada/mountains.jpg"
+    to = "/static/images/canada/mountains.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/static/images/canada/toronto.jpg"
+    to = "/static/images/canada/toronto.jpg"
+    status = 200
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+    force = true
+
+      [context.production.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.production.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/404.json"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/404"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/projects.json"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/projects"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/page/:page.json"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/blog/page/:page"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/:slug/*"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/blog/:slug/*"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/tags/:tag.json"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/tags/:tag"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+  [context.master]
+
+    [context.master.environment]
+    NEXT_PRIVATE_TARGET = "server"
+
+    [context.master.functions]
+
+      [context.master.functions._ipx]
+      node_bundler = "nft"
+
+      [context.master.functions.___netlify-handler]
+      included_files = [
+        ".env",
+        ".env.local",
+        ".env.production",
+        ".env.production.local",
+        ".next/server/**",
+        ".next/serverless/**",
+        ".next/*.json",
+        ".next/BUILD_ID",
+        ".next/static/chunks/webpack-middleware*.js",
+        "!.next/server/**/*.js.nft.json",
+        "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+        "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/compiled/webpack/bundle4.js",
+        "!node_modules/next/dist/compiled/webpack/bundle5.js",
+        "!node_modules/next/dist/compiled/terser/bundle.min.js",
+        "!node_modules/sharp/**/*"
+      ]
+      external_node_modules = []
+      node_bundler = "nft"
+
+      [context.master.functions.___netlify-odb-handler]
+      included_files = [
+        ".env",
+        ".env.local",
+        ".env.production",
+        ".env.production.local",
+        ".next/server/**",
+        ".next/serverless/**",
+        ".next/*.json",
+        ".next/BUILD_ID",
+        ".next/static/chunks/webpack-middleware*.js",
+        "!.next/server/**/*.js.nft.json",
+        "!node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*",
+        "!node_modules/next/dist/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/next-server/server/lib/squoosh/**/*.wasm",
+        "!node_modules/next/dist/compiled/webpack/bundle4.js",
+        "!node_modules/next/dist/compiled/webpack/bundle5.js",
+        "!node_modules/next/dist/compiled/terser/bundle.min.js",
+        "!node_modules/sharp/**/*"
+      ]
+      external_node_modules = []
+      node_bundler = "nft"
+
+    [context.master.build]
+
+      [context.master.build.environment]
+      NEXT_PRIVATE_TARGET = "server"
+
+    [[context.master.redirects]]
+    from = "/_next/static/*"
+    to = "/static/:splat"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/_next/image*"
+    to = "/_ipx/w_:width,q_:quality/:url"
+    status = 301
+
+      [context.master.redirects.query]
+      url = ":url"
+      w = ":width"
+      q = ":quality"
+
+    [[context.master.redirects]]
+    from = "/_ipx/*"
+    to = "/.netlify/builders/_ipx"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/cache/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/server/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/serverless/*"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/traces"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/routes-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/build-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/prerender-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/react-loadable-manifest.json"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/BUILD_ID"
+    to = "/404.html"
+    status = 404
+    force = true
+
+    [[context.master.redirects]]
+    from = "/api"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/feed.xml"
+    to = "/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/sitemap.xml"
+    to = "/sitemap.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/android-chrome-96x96.png"
+    to = "/static/favicons/android-chrome-96x96.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/apple-touch-icon.png"
+    to = "/static/favicons/apple-touch-icon.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/browserconfig.xml"
+    to = "/static/favicons/browserconfig.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/favicon-16x16.png"
+    to = "/static/favicons/favicon-16x16.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/favicon-32x32.png"
+    to = "/static/favicons/favicon-32x32.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/favicon.ico"
+    to = "/static/favicons/favicon.ico"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/mstile-150x150.png"
+    to = "/static/favicons/mstile-150x150.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/safari-pinned-tab.svg"
+    to = "/static/favicons/safari-pinned-tab.svg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/favicons/site.webmanifest"
+    to = "/static/favicons/site.webmanifest"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/avatar.png"
+    to = "/static/images/avatar.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/google.png"
+    to = "/static/images/google.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/logo.png"
+    to = "/static/images/logo.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/ocean.jpeg"
+    to = "/static/images/ocean.jpeg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/sparrowhawk-avatar.jpg"
+    to = "/static/images/sparrowhawk-avatar.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/time-machine.jpg"
+    to = "/static/images/time-machine.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/twitter-card.png"
+    to = "/static/images/twitter-card.png"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/book/feed.xml"
+    to = "/tags/book/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/canada/feed.xml"
+    to = "/tags/canada/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/code/feed.xml"
+    to = "/tags/code/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/features/feed.xml"
+    to = "/tags/features/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/feature/feed.xml"
+    to = "/tags/feature/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/guide/feed.xml"
+    to = "/tags/guide/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/github/feed.xml"
+    to = "/tags/github/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/holiday/feed.xml"
+    to = "/tags/holiday/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/markdown/feed.xml"
+    to = "/tags/markdown/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/images/feed.xml"
+    to = "/tags/images/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/math/feed.xml"
+    to = "/tags/math/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/next-js/feed.xml"
+    to = "/tags/next-js/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/multi-author/feed.xml"
+    to = "/tags/multi-author/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/ols/feed.xml"
+    to = "/tags/ols/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/reflection/feed.xml"
+    to = "/tags/reflection/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/tailwind/feed.xml"
+    to = "/tags/tailwind/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/tags/writings/feed.xml"
+    to = "/tags/writings/feed.xml"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/canada/lake.jpg"
+    to = "/static/images/canada/lake.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/canada/maple.jpg"
+    to = "/static/images/canada/maple.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/canada/mountains.jpg"
+    to = "/static/images/canada/mountains.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/static/images/canada/toronto.jpg"
+    to = "/static/images/canada/toronto.jpg"
+    status = 200
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+    force = true
+
+      [context.master.redirects.conditions]
+      Cookie = [
+        "__prerender_bypass",
+        "__next_preview_data"
+      ]
+
+    [[context.master.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/404.json"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/404"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/projects.json"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/projects"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/page/:page.json"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/blog/page/:page"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/blog/:slug/*"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/blog/:slug/*"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/_next/data/NLzNIBuqZ-Patv-RoEBia/tags/:tag.json"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/tags/:tag"
+    to = "/.netlify/builders/___netlify-odb-handler"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/*"
+    to = "/.netlify/functions/___netlify-handler"
+    status = 200
